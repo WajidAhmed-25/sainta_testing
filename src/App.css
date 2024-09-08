@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css?family=Kaisei+Tokumin&display=swap');
+
+* {
+  font-family: 'Kaisei Tokumin', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.topNavbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  height: auto;
+  width: 100%;
+  padding: 0 50px;
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  left: 0;
+}
+
+.saintaLogo {
+  margin: 15px 0;
+  width: 70px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+}
+
+.topNavbarText {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Now Bottom Navbar */
+.bottomNavbar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e6e6e6;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  z-index: 5;
+}
+
+.bottomNavbarIcon {
+  color: #333;
+  margin-right: 10px;
+}
+
+.bottomNavbarSelectable {
+  font-size: 0.9em;
+  cursor: pointer;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.bottomNavbarSelectable:hover {
+  background-color: #f2f2f2;
+  scale: 1.05;
+}
+
+.introBox {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.introText {
+  font-size: 2em;
+  text-align: center;
+  color: #333;
+  padding: 0 230px;
+  margin: auto;
+}
+
+/* Main Page Fade - Text */
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 0.02;
+  transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  /* opacity: 0.01; */
+  transition: opacity 1000ms ease-in;
+}
+
+/* The Next Button on Main Page */
+.nextButton {
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: inline-block;
+  box-shadow: 0px 1px 9px -3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  position: absolute;
+  /* bottom: 50px; */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nextButton:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0px 1px 12px -2px rgba(0, 0, 0, 0.3);
+}
+
+.planBox {
+  font-size: 80px;
+  padding: 1.5em;
+  width: 150px;
+  height: 150px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* hover state */
+.planBox:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* selected state */
+.planBox:active,
+.planBox:focus {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+.planBoxes {
+  display: flex;
+  margin: 2em 0;
+  align-items: center;
+  position: relative;
+}
+
+#pbKo {
+  margin-right: 1.5em;
+}
+
+#pbKa {
+  margin-left: 1.5em;
+}
+
+.introBox_PlanText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -50px;
+  position: relative;
+}
+
+.introText_PlanText {
+  font-size: 1.5em;
+  text-align: center;
+  color: #333;
+  margin: auto;
+  position: absolute;
+}
+
+.main_container_interface {
+  margin-top: 2em;
+}
+
+.lg_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2em 0;
+}
+
+.button_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5em;
+  margin: 1em 0;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fafafa;
+  margin: 0.1em 1em;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-size: 2.75em;
+  color: #525252;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.125), transparent);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition:
+    transform 0.8s,
+    opacity 2s;
+}
+
+.button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition:
+    transform 1s,
+    opacity 0s;
+}
+
+.button:hover {
+  background-color: #e6e6e6;
+  color: #5a5a5a;
+}
+
+.button-item:hover .button_displaytext {
+  color: #2a2a2a;
+}
+
+.button-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_displaytext {
+  font-size: 1.15em;
+  color: #333;
+  margin-top: 0.5em;
+  transition: color 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+a.button-pdf-download {
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #000;
+  background-color: #eee !important;
+  text-decoration: none;
+}
+
+a.button-pdf-download:hover {
+  background-color: #e6e6e6 !important;
+  color: #000;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.loading-register {
+  background: #f0f0f0 !important;
+}
+.loading-register:hover,
+.loading-login:hover {
+  background: #e6e6e6 !important;
+}
+
+.loading-login {
+  padding: 7px 10px !important;
+  border-radius: 4px !important;
+  border: 1px solid #ccc !important;
+  cursor: pointer;
+  font-size: 20px !important;
+  color: #000;
+  margin-top: 20px !important;
+  background-color: #fff !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.error-span {
+  /* wrap within the boundaries */
+  display: block;
+  max-width: 185px; /* The default size of labels */
+  margin-top: 10px;
+}
+
+/* All Responsive Queries */
+/* Responsive button styles for smaller screens */
+@media (max-width: 768px) {
+  .button {
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+    margin: 0.5em;
+  }
+
+  .button_row {
+    gap: 2em;
+  }
+
+  .button-item .button_displaytext {
+    font-size: 1em;
+  }
+
+  body {
+    height: 80vh;
+  }
+
+  .main_container_interface {
+    margin-top: 0.2em;
+  }
+
+  .large_container {
+    margin: 1em 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .button {
+    width: 70px;
+    height: 70px;
+    font-size: 1.75em;
+    margin: 0.5em;
+  }
+
+  .button_row {
+    gap: 1em;
+    margin: 0.5em 0;
+  }
+
+  .topNavbar {
+    height: 70px;
+  }
+
+  .saintaLogo {
+    width: 60px;
+    margin: 10px 0;
+  }
+
+  .topNavbarText {
+    font-size: 0.8em;
+  }
+
+  .bottomNavbar {
+    height: 50px;
+    padding: 5px 10px;
+  }
+
+  .bottomNavbarSelectable {
+    font-size: 0.8em;
+    padding: 5px 10px;
+  }
+
+  body {
+    height: 95vh;
+  }
+
+  .button-item .button_displaytext {
+    font-size: 0.8em;
+  }
+
+  .main_container_interface {
+    margin-top: 0.2em;
+  }
+
+  .large_container {
+    margin: 1em 0;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 360px) {
+  .button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    margin: 0.5em;
+  }
+
+  .topNavbarText {
+    font-size: 0.8em;
+  }
+
+  .topNavbar {
+    height: 70px;
+  }
+
+  .button_row {
+    gap: 1em;
+  }
+
+  .button-item .button_displaytext {
+    font-size: 0.8em;
+  }
+
+  body {
+    height: 90vh;
+  }
+
+  .main_container_interface {
+    margin-top: 0.2em;
+  }
+
+  .large_container {
+    margin: 1em 0;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .topNavbar {
+    height: 70px;
+  }
+
+  .saintaLogo {
+    width: 50px;
+    margin: 10px 0;
+  }
+
+  .topNavbarText {
+    font-size: 1.5em;
+  }
+
+  .button {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8em;
+    margin: 0.5em;
+  }
+
+  .button-item .button_displaytext {
+    font-size: 0.9em;
+  }
+
+  .button_row {
+    gap: 3em;
+  }
+
+  body {
+    height: 105vh;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1366px) {
+  .button {
+    width: 90px;
+    height: 90px;
+    font-size: 2em;
+    margin: 0.5em;
+  }
+
+  .lg_container {
+    margin: 1em 0;
+  }
+
+  .button-item .button_displaytext {
+    font-size: 1em;
+  }
+
+  .button_row {
+    gap: 3em;
+  }
+
+  body {
+    height: 100vh;
+  }
+}

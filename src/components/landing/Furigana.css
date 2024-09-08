@@ -1,0 +1,18 @@
+.furigana-container {
+  display: inline-block;
+  text-align: center;
+  line-height: normal; /* Ensuring normal line spacing */
+}
+
+.furigana {
+  font-size: 0.7em; /* Reduced and made relative to the parent element's font size */
+  color: #abb9c5; /* Subtle grey, looks more polished */
+  letter-spacing: 0.1em; /* Slightly increase letter spacing for clarity */
+}
+
+.kanji {
+  font-size: 1.5em; /* Clearly larger compared to the furigana */
+  font-weight: bold;
+  line-height: 1; /* Reducing the line-height to bring furigana closer to kanji */
+  letter-spacing: 0.05em; /* Slightly increase letter spacing for clarity */
+}

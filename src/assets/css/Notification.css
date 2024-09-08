@@ -1,0 +1,25 @@
+.sainta-snackbar {
+    font-family: 'Kaisei Tokumin', serif;
+  }
+  
+  .sainta-alert {
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 4px; 
+  }
+  
+  .sainta-alert-info {
+    background-color: #2176ff;
+  }
+  
+  .sainta-alert-success {
+    background-color: #4caf50; 
+  }
+  
+  .sainta-alert-warning {
+    background-color: #ff9800; 
+  }
+  
+  .sainta-alert-error {
+    background-color: #f44336; 
+  }

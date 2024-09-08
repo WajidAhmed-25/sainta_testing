@@ -1,0 +1,373 @@
+.landing-container {
+  position: absolute;
+  margin-top: 120px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Ensures the container fits the width */
+  max-width: 900px; /* Maximum width of the container */
+  z-index: 3;
+}
+
+.landing_signature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.2em;
+  color: #979797;
+  transition: color 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.landing-nav-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 30px; /* Adjusted margin for spacing */
+  font-size: 1.5em; /* Adjusted font-size for better visibility */
+  color: #333; /* Added color for better visibility */
+  transition: color 0.3s ease; /* Added transition for better visibility */
+  font-weight: bold; /* Added font-weight for better visibility */
+  letter-spacing: 0.1em; /* Added letter-spacing for better visibility */
+  cursor: pointer; /* Added cursor for better visibility */
+}
+
+.landing-nav-logo {
+  width: 40px; /* Adjusted width for better visibility */
+  margin-right: 10px; /* Adjusted margin for spacing */
+}
+
+.landing-nav-button:hover {
+  scale: 1.1; /* Added scale for better visibility */
+  transition: scale 0.3s ease; /* Added transition for better visibility */
+  color: #2a2a2a; /* Added color for better visibility */
+}
+
+.landing-side-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto; /* Added auto to center align on the page and decreased top margin for smoother look */
+  padding: 20px; /* Added padding for some inside space */
+  max-width: 1500px; /* Set a maximum width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: added shadow for depth */
+  border-radius: 10px; /* Optional: added border-radius for softer edges */
+  z-index: 3;
+  background-color: #fff; /* Optional: added background color for contrast */
+}
+
+.landing-side-image {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  margin: 40px 0;
+  opacity: 0;
+}
+
+.landing-side-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Changed to flex-start for natural text alignment */
+  margin-left: 50px; /* Adjusted margin for spacing */
+  margin-right: 50px;
+}
+
+.landing-header {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.landing-body {
+  font-size: 1em; /* Adjusted for better readability */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 3;
+}
+
+.modal-input-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 3;
+}
+
+.icon-word-display {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+  font-size: 1.5em;
+  color: #333;
+  transition: color 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.icon-word-display:hover {
+  scale: 1.1;
+  transition: scale 0.3s ease;
+  color: #2a2a2a;
+}
+
+.logoSmall {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.floating-words {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.words {
+  position: absolute;
+  white-space: nowrap;
+  opacity: 0.2;
+  font-size: 1em;
+  color: #000;
+  pointer-events: none;
+  animation: moveUpPage 10s linear infinite;
+  text-shadow: 2px 2px 3px rgba(35, 120, 176, 0.4);
+}
+
+@keyframes moveUpPage {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* now lets do smart phones */
+@media screen and (min-width: 280px) and (max-width: 375px) {
+  .landing-side-container {
+    max-width: 275px; /* Adjusted max-width for responsiveness */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-side-image {
+    max-width: 200px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-header {
+    font-size: 1.2em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-body {
+    font-size: 0.7em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-nav-bar {
+    max-width: 350px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-nav-button {
+    margin: 0 20px; /* Adjusted margin for spacing */
+    font-size: 1em; /* Adjusted font-size for better visibility */
+  }
+}
+
+/* lets do larger smart phones */
+@media screen and (min-width: 376px) and (max-width: 500px) {
+  .landing-side-container {
+    max-width: 350px; /* Adjusted max-width for responsiveness */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-side-image {
+    max-width: 200px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-header {
+    font-size: 1.2em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-body {
+    font-size: 0.7em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-nav-bar {
+    max-width: 350px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-nav-button {
+    margin: 0 20px; /* Adjusted margin for spacing */
+    font-size: 1em; /* Adjusted font-size for better visibility */
+  }
+}
+
+/* lets do tablets and ipads */
+@media screen and (min-width: 768px) and (max-width: 800px) {
+  .landing-side-container {
+    max-width: 700px; /* Adjusted max-width for responsiveness */
+    display: flex;
+    flex-direction: row;
+  }
+
+  .landing-side-image {
+    max-width: 200px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-header {
+    font-size: 1.2em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-body {
+    font-size: 0.7em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-nav-bar {
+    max-width: 700px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-nav-button {
+    margin: 0 20px; /* Adjusted margin for spacing */
+    font-size: 1em; /* Adjusted font-size for better visibility */
+  }
+}
+
+/* lets do larger tablets and ipads */
+@media screen and (min-width: 801px) and (max-width: 900px) {
+  .landing-side-container {
+    max-width: 800px; /* Adjusted max-width for responsiveness */
+    display: flex;
+    flex-direction: row;
+  }
+
+  .landing-side-image {
+    max-width: 200px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-header {
+    font-size: 1.2em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-body {
+    font-size: 0.7em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-nav-bar {
+    max-width: 800px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-nav-button {
+    margin: 0 20px; /* Adjusted margin for spacing */
+    font-size: 1em; /* Adjusted font-size for better visibility */
+  }
+}
+
+/* lets do ipadPro -  1024px */
+@media screen and (min-width: 901px) and (max-width: 1024px) and (orientation: portrait) {
+  .landing-side-container {
+    max-width: 800px; /* Adjusted max-width for responsiveness */
+    display: flex;
+    flex-direction: row;
+  }
+
+  .landing-side-image {
+    max-width: 200px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-header {
+    font-size: 1.2em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-body {
+    font-size: 0.7em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-nav-bar {
+    max-width: 800px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-nav-button {
+    margin: 0 20px; /* Adjusted margin for spacing */
+    font-size: 1em; /* Adjusted font-size for better visibility */
+  }
+}
+
+/* now nest hub and etc */
+@media screen and (min-width: 1000px) and (max-width: 1280px) and (orientation: landscape) {
+  .landing-side-container {
+    max-width: 900px; /* Adjusted max-width for responsiveness */
+    display: flex;
+    flex-direction: row;
+  }
+
+  .landing-side-image {
+    max-width: 200px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-header {
+    font-size: 1.2em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-body {
+    font-size: 0.7em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-nav-bar {
+    max-width: 800px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-nav-button {
+    margin: 0 20px; /* Adjusted margin for spacing */
+    font-size: 1em; /* Adjusted font-size for better visibility */
+  }
+}
+
+/* now lets do desktops */
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
+  .landing-side-container {
+    max-width: 1200px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-side-image {
+    max-width: 450px; /* Adjusted max-width for responsiveness */
+  }
+
+  .landing-header {
+    font-size: 1.5em; /* Adjusted font-size for better readability */
+  }
+
+  .landing-body {
+    font-size: 1em; /* Adjusted font-size for better readability */
+  }
+}
